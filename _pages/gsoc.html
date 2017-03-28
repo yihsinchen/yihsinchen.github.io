@@ -1,0 +1,699 @@
+---
+layout: null
+title: GSoC
+permalink: /gsoc/
+---
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        GSoC 2016 DevLog
+      </title>
+
+        <!--Import custom stylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Import Github Octicons -->
+      <link rel="stylesheet" href="css/octicons/octicons.css">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <header>
+        <div class="grey lighten-4 black-text z-depth-2">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                  <h6>
+                    <img src='http://scikit-learn.org/stable/_static/scikit-learn-logo-small.png' width="160" height="58">
+                    </img>
+                  </h6>
+                  <h3>
+                    <b>GSoC 2016 Log</b>
+                  </h3>
+                  <h6 style="margin-bottom: 15px">
+                    Tracking project progress and contributions for scikit-learn.
+                  </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+          <div class="container">
+
+            <!---
+            <a class="gh-icon red lighten-1 btn-floating right btn-large z-depth-2"
+              href="https://www.github.com/tardis-sn/tardis/commits/?author=karandesai-96" target="_blank">
+              <i class="mega-octicon octicon-git-commit"></i>
+            </a>
+            --->
+            <a class="gh-icon grey lighten-0 btn-floating right btn-large z-depth-2"
+              href="https://github.com/scikit-learn/scikit-learn/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3Ayenchenlin+" target="_blank">
+              <i class="mega-octicon octicon-git-pull-request"></i>
+            </a>
+
+            <a class="gh-icon grey lighten-0 btn-floating right btn-large z-depth-2"
+              href="https://github.com/scikit-learn/scikit-learn/issues?utf8=%E2%9C%93&q=is%3Aissue+author%3Ayenchenlin+" target="_blank">
+              <i class="mega-octicon octicon-issue-opened"></i>
+            </a>
+            <!---
+            <a class="gh-icon red lighten-1 btn-floating right btn-large z-depth-2"
+              href="https://www.github.com/karandesai-96/tardis" target="_blank">
+              <i class="mega-octicon octicon-repo-clone"></i>
+            </a>
+            --->
+
+            <!-- AND THE DEV LOG STARTS FROM HERE -->
+
+            <ul class="collapsible popout" data-collapsible="expandable">
+
+            <li>
+              <div class="collapsible-header waves-effect active waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b> 21 Aug - 27 Aug</b>
+              </div>
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>22 Aug </b><br/>
+ 
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6586">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6586</b></a>:
+                        Refactor the code (thanks @MechCoder) and add tests.
+                    <br>
+
+                  </li>
+
+
+                  <li><b>21 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7218">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7218</b></a>:
+                        Make `enet_coordinate_descent_gram` support fused types.
+                    <br>
+
+                  </li>
+
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b> 14 Aug - 20 Aug</b>
+              </div>
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>19 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6586">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6586</b></a>:
+                        Refactor the code.
+                    <br>
+
+                  </li>
+
+
+                  <li><b>17 Aug - 18 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                        Making documents more clear.
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6586">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6586</b></a>:
+                        Fixing type issues.
+                    <br>
+
+                  </li>
+
+
+                  <li><b>14 Aug - 16 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7187">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7187</b></a>:
+                        PR merged: Rename CV params n_{folds,iter} to n_splits
+                    <br>
+
+                    - Close #7169 which want to address inconsistency between different CV splitters.
+
+                    <br>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b> 7 Aug - 13 Aug</b>
+              </div>
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>12 Aug - 13 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7184">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7184</b></a>:
+                        PR merged: Add whats_new about fixing example.
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7187">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7187</b></a>:
+                        Open a new PR to rename CV params n_{folds,iter} to n_splits.
+                    <br>
+
+
+                  </li>
+
+
+                  <li><b>9 Aug - 11 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7170">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7170</b></a>:
+                        PR merged: Make silhouette_score support sparse X.
+                    <br>
+
+                    - Close #6317 and #6318 due since silhouette_score now supports sparse X.
+
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6344">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6344</b></a>:
+                        PR merged: DOC Add LabelKFold in _BaseKFold's docstring.
+                    <br>
+
+                  </li>
+
+                  <li><b> 8 Aug </b><br/>
+
+                    - New blog post out! <a href="http://blog.yclin.me/deep/learning/2016/08/08/Fused-Types-Limitation/">Workaround to use fused types class attributes </a>.
+
+                    <br>
+
+                  </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>31 July - 6 Aug</b>
+              </div>
+
+              <div class="collapsible-body blue lighten-5">
+                <ul class="details">
+
+                  <li><b>6 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7153">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7153</b></a>:
+                        Make neighbor tree module support Cythob fused types.
+                    <br>
+
+                    - Find a bug in Cython and reproduce it <a href="https://github.com/yenchenlin/fused-types-extension-example/blob/master/fused_types_extension.ipynb">here</a>.
+
+                    <br>
+
+                  </li>
+
+                  <li><b>5 Aug </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7145">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7145</b></a>:
+                        Fix a trivial typo since I'm a little frustrated about CD issues.
+                    <br>
+
+                  </li>
+                 
+
+                   <li><b>3-4 Aug </b><br/>
+
+                        - Trying declare `data` as void* and cast it in evert functions.
+                    <br>
+
+                  </li>
+                 
+                  <li><b>1-2 Aug </b><br/>
+
+                        - Still suffer from testing for CD issues.
+
+                  </li>
+
+                  <li><b>31 July </b><br/>
+
+                        - Writing blog post about how to reproduce CI enviroment
+                    <br>
+
+                        - Visiting my grandparents.
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>24 July - 30 July</b>
+              </div>
+
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>30 July: </b><br/>
+                      - Suffer from Cython compilation error.
+                  </li>
+
+                  <li><b>28-29 July: </b><br/>
+                        
+                      - Investigating on the true reason which caused precision error of CD according to <a href="https://github.com/scikit-learn/scikit-learn/pull/6913#issuecomment-236096273">this comment</a>, thanks MechCoder.
+                      - Reading some sections in Oreilly Cython book which cover C++ with Cython.
+
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                        Fix PEP8.
+                        
+                 </li>
+
+
+                  <li><b>26-27 July: </b><br/>
+                        
+                    - Try C++ with Cython.
+
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                        Fix PEP8.
+                        
+                 </li>
+
+                  <li><b>24-25 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                        Open a Windows 32-bit VM and a Ununtu 14.04 VM and set them up to develop scikit in order to check the mysterious bug, still can't figure out after carefully inspect input.
+                        
+                        <br>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                        Decide to continue the PR by checking if computer is not 32 bit to avoid error.
+
+                        <br>
+
+
+                    - Reproduce the fused types error and ask it on Cython mailing list to confirm.
+                        
+                 </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>17 July - 23 July</b>
+              </div>
+
+              <div class="collapsible-body blue lighten-5">
+                <ul class="details">
+
+                   <li><b>23 July: </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Checking input data for saxpy function
+                      <a href="https://github.com/scikit-learn/scikit-learn/pull/6913/files#diff-a2e90eeb6052ae797fc18e529aebe758R131"> line 131</a>, it occurrs error on 32-bit computer, and I still can't figure out.
+                      
+                      <br>
+
+                    - New blog post: Interactive Cython with IPython, no compilation anymore!
+
+                      <br>
+
+                    - Chnage my blog theme to make it easier to read.
+
+                    <br>
+
+                  </li>
+
+      
+                  <li><b>22 July: </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Find bug occurrs when calling saxpy function's 
+                      <a href="https://github.com/scikit-learn/scikit-learn/pull/6913/files#diff-a2e90eeb6052ae797fc18e529aebe758R131"> line 131</a>, but still don't know the core reason. 
+                      
+                      <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/issues/7059">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7059</b></a>:
+                      Try to use void* to declare data and then typecast it in each funtion,
+                      temporarily fails.
+
+                      <br>
+
+                    - Discover that Cython can be tested in iPython without compilation, which is super
+                    useful to try out new things. Will write a blog post to it tomorrow.
+
+                    <br>
+
+                  </li>
+
+                 
+                  <li><b>21 July: </b><br/>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Using<a href='http://www.appveyor.com/docs/how-to/rdp-to-build-worker'> 
+                            this mechanism</a> provided by appveyor to debug.
+
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/issues/7059">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7059</b></a>:
+                      Discuss about how to make neighbor trees module support fused types.
+
+                    <br>
+
+                    - Create <a href="https://github.com/yenchenlin/scikit-learn/commit/7c87f29f5869b4b757d6105e51404307df23d3d9">a branch</a> to illustrate my proposed solution since 
+                    fused types can't be used to declare class attributes.
+
+                  </li>
+
+                  <li><b>20 July: </b><br/>
+
+                    - New blog post -
+                      <a href="http://yclin.me/2016/07/32bit-scikit-learn">
+                        How to set up 32bit scikit learn on Mac without additional installation
+                      </a>
+                                                                                                                                      <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      - Trying to Find methods to test scikit-learn when PYTHON_ARCH=32
+
+                    <br>
+
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/7053">
+                    <i class="octicon octicon-git-pull-request"></i><b>#7053</b></a>:
+                      - Reduce dupliated code using fused types fptr.
+
+                  </li>
+
+                  <li><b>19 July: </b><br/>
+                    - New blog post -
+                      <a href="http://yclin.me/2016/07/Function-Pointer">
+                        Using Function Pointer to Maximize Code Reusability in Cython
+                      </a>
+                    <br>
+                    - Report the analysis about making SequentialDataset to support Cython fused types, see 
+                      <a href="https://gist.github.com/yenchenlin/34aef13d26cbbe29a610a93aacb83f35">
+                        Analysis report
+                      </a>
+                     here.
+                  </li>
+
+                  <li><b>17-18 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Addressing reviewers' comments.
+                  </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>10 July - 16 July</b>
+              </div>
+
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+                  <li><b>14 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Writing blog post about CD with fused types. (Although CI is not happy)
+                 </li>
+                  <li><b>12-13 July: </b><br/>
+                      - Investigating whether SequentialDataset can be modified to support Cython fused types.
+                 </li>
+                  <li><b>11 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      - Make CD algorithms in scikit-learn support fused types when data is in sprase format.
+                 </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>3 July - 9 July</b>
+              </div>
+
+              <div class="collapsible-body blue lighten-5">
+                <ul class="details">
+
+                  <li><b>8 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Add tests.
+                 </li>
+
+                  <li><b>7 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      - Resolve code duplication problem in PR #6913 of scikit-learn. 
+                      
+                      <br>
+
+                      - Try dsdot, sdsdot to fix precision problems when making CD algorithm support fused types.
+                 </li>
+
+                  <li><b>6 July: </b><br/>
+                      Create <a href="https://github.com/yenchenlin/CD-fused-types-problems">a repo</a> to illustrate precision problems when making CD algorithm in scikit-learn support fused types.
+                 </li>
+
+                  <li><b>3-4 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Investigating the reason which cause CD not working when dealing with float32 data.
+                 </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>26 June - 2 July</b>
+              </div>
+
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>1-2 July: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Make dtype correct and update the profiling results. (Bugs still exist :\  )
+                    </br>
+                 </li>
+
+
+                  <li><b>29-30 June: </b><br/>
+                      Leave schools and move house.
+                  </li>
+
+                  <li><b>27-28 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Profile resuls.
+                      Debugging.
+                      Adding source files.
+                  </li>
+
+                  <li><b>26 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Trying to make ElasticNet supports fused types.
+                 </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>19 June - 25 June</b>
+              </div>
+
+              <div class="collapsible-body blue lighten-5">
+                <ul class="details">
+                  <li><b>New blog post -
+                    <a href="http://yclin.me/2016/06/KMeans">
+                      scikit-learn KMeans Now Support Fused Types.
+                    </a>
+                  </b><br/>
+                  </li>
+
+                  <li><b>23-25 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Learning coordinate descent.
+                 </li>
+
+                  <li><b>22 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6913">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6913</b></a>:
+                      Open this PR to make coordinate descent related algorithms support fused types.
+                 </li>
+
+                  <li><b>21 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6846">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6846</b></a>:
+                      Pull request merged! KMeans in scikit-learn now supports fused types.
+                 </li>
+
+                  <li><b>19 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6846">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6846</b></a>:
+                      Benchmark sparse input case and show that this PR indeed reduce memory usage
+                 </li>
+
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="collapsible-header waves-effect waves-light orange darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>12 June - 18 June</b>
+              </div>
+
+              <div class="collapsible-body grey lighten-5">
+                <ul class="details">
+
+                  <li><b>18 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6905">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6905</b></a>:
+                      Open this PR to make inline and helper functions in CD to support fused types.
+                    </br>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6846">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6846</b></a>:
+                      Fix several bugs and add some tests suggested by reviewer.
+                 </li>
+
+
+                  <li><b>17 June: </b><br/>
+                      Create <a href="https://github.com/yenchenlin/Cython_Experiments">a minimal example</a> to reproduce the errors occurred when Cython inheritance works with fused types.
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6846">
+                    </br>
+                    <i class="octicon octicon-git-pull-request"></i><b>#6846</b></a>:
+                      Remove redundant code.
+                      Add tests for int input data.
+                  </li>
+
+                  <li><b>15 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6889">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6889</b></a>:
+                      Open this PR to make SGD support Cython fused types.
+                  </li>
+
+                  <li><b>14 June: </b><br/>
+                    <a href="https://github.com/scikit-learn/scikit-learn/pull/6846">
+                    <i class="octicon octicon-git-pull-request"></i><b>#6846</b></a>:
+                      Make KMeans supports Cython fused types.
+                      Refactor tests of KMeans.
+                  </li>
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+
+              <div class="collapsible-header waves-effect waves-light light-blue darken-2 white-text">
+                <i class="mega-octicon octicon-calendar"></i>
+                <b>5 June - 11 June</b>
+              </div>
+
+              <div class="collapsible-body blue lighten-5">
+                <ul class="details">
+                  <li><b>New blog post -
+                    <a href="http://yclin.me/2016/06/difference-between-float64-and-float64_t">
+                      Difference between np.float64 & np.float64_t
+                    </a>
+                  </b><br/>
+                  </li>
+                  <!---
+                  <li><b>Significant work</b><br/>
+                    <a href="https://github.com/tardis-sn/tardis/pull/558">
+                    <i class="octicon octicon-git-pull-request"></i><b>#558</b></a>:
+                    TestW7 was written before my selection. Modified it a bit and got it merged.
+                  </li>
+                  <li>
+                    <a href="https://github.com/tardis-sn/tardis/pull/561">
+                    <i class="octicon octicon-git-pull-request"></i><b>#561</b></a>:
+                    Added spectrum quantity assertions to TestW7, ensured control through fixtures.
+                  </li>
+                  <li>
+                    <a href="https://github.com/tardis-sn/tardis/pull/566">
+                    <i class="octicon octicon-git-pull-request"></i><b>#566</b></a>:
+                    Add <code>plot_spectrum</code> method in TestW7 to generate a comparison plot and save it in proper directory structure.
+                  </li>
+                  --->
+                  <br/>
+                </ul>
+              </div>
+            </li>
+
+        </ul>
+          </div>
+      </main>
+    </body>
+  </html>

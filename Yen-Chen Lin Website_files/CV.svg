@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="437px" height="126px" viewBox="0 0 437 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>CV</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="437" height="126"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="437" height="126" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CV">
+            <g id="Page-1">
+                <g id="CV">
+                    <g id="Page-1">
+                        <g id="CV">
+                            <g id="Page-1">
+                                <g id="Group">
+                                    <g id="Blog" transform="translate(19.000000, 33.000000)" font-size="50" font-family="Helvetica-Bold, Helvetica" fill="#FFFFFF" font-weight="bold">
+                                        <g id="CV">
+                                            <text id="Curriculum-Vitae">
+                                                <tspan x="0" y="49">C</tspan>
+                                                <tspan x="36.1083984" y="49">urri</tspan>
+                                                <tspan x="119.458008" y="49">culum </tspan>
+                                                <tspan x="280.59082" y="49">Vitae</tspan>
+                                            </text>
+                                        </g>
+                                    </g>
+                                    <use id="Rectangle-2" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="12" xlink:href="#path-1"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

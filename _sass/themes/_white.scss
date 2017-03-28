@@ -1,0 +1,19 @@
+/* ==========================================================================
+   White Theme
+   ========================================================================== */
+
+.t-white {
+
+  .c-navigation,
+  .c-header {
+    background: $c__white;
+  }
+
+  .c-article__main a:not(.c-btn) {
+    color: $c__black;
+  }
+
+  .c-footer a {
+    color: $c__white;
+  }
+}

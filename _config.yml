@@ -1,0 +1,21 @@
+# Site settings
+title: Yen
+email: yenchenlin1994@gmail.com
+description: >
+  This blog talks about how to make machine learn.
+baseurl: ""
+url: "http://yclin.me"
+fixedNav: 'true' # true or false
+theme: white # green, blue, orange, purple, grey
+twitterUsername: yenchenlin1994
+githubUsername: yenchenlin1994
+dribbbleUsername:
+codepenUsername:
+
+# Build settings
+permalink: /:year/:month/:title
+markdown: kramdown
+include: [_pages]
+exclude: [_site, CHANGELOG.md, LICENSE, README.md]
+sass:
+  style: compressed
