@@ -1,0 +1,522 @@
+---
+layout: null
+title: GSoC
+permalink: /segmentation_adaptation/
+---
+<!DOCTYPE html>
+<html class="gr__vis_csail_mit_edu">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="description" content="We introduce two tactics to attack agents trained by deep reinforcement learning algorithms using adversarial examples" >
+    <meta name="og:url" content="http://yclin.me/adversarial_attack_RL/">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="No More Discrimination: Cross City Adaptation of Road Scene Segmenters">
+    <meta name="og:site_name" content="">
+    <meta name="og:description" content="We introduce two tactics to attack agents trained by deep reinforcement learning algorithms using adversarial examples">
+    <meta name="og:image" content="../adversarial_attack_RL/paper_thumb.png">
+    <script async="" src="../adversarial_attack_RL/analytics.js"></script>
+    <script type="text/javascript" id="www-widgetapi-script" src="../adversarial_attack_RL/www-widgetapi.js"
+            async=""></script>
+    <script src="../adversarial_attack_RL/jsapi" type="text/javascript"></script>
+    <script src="../adversarial_attack_RL/iframe_api"></script>
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    <script src="../adversarial_attack_RL/jquery.min.js" type="text/javascript"></script>
+    <script src="../adversarial_attack_RL/jquery.js"></script>
+    <script src="../adversarial_attack_RL/jquery.lazyloadxt.extra.js"></script>
+    <link rel="stylesheet" href="../adversarial_attack_RL/owl.carousel.css">
+    <link rel="stylesheet" href="../adversarial_attack_RL/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../adversarial_attack_RL/vis.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="../adversarial_attack_RL/owl.carousel.js"></script>
+    <script>
+        function removeAllChildren(node) {
+            if (node.hasChildNodes()) {
+                var children = node.getElementsByTagName("span");
+                for (var i = 0; i < children.length; i++) {
+                    node.removeChild(children[i]);
+                }
+            }
+        }
+
+        function showEmail(n, d, nm) {
+            var link = document.getElementById(n);
+            var text = document.createTextNode(n + "@" + d);
+            removeAllChildren(link);
+            link.appendChild(text);
+            link.setAttribute("href", "mailto:" + n + "@" + d + " (" + nm + ")");
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".header-vid").each(function (index) {
+                $(this).bind("ended", function () {
+                    $(this).load();
+                });
+            });
+        });
+    </script>
+    <title>No More Discrimination: Cross City Adaptation of Road Scene Segmenters</title></head>
+
+
+<body data-gr-c-s-loaded="true">
+<!-- <center> -->
+<br>
+<table>
+
+    <tbody>
+    <tr>
+        <td>
+            <div style="
+            display: flex;
+            justify-content: space-between;
+            aling-items: center;">
+                <img src="../adversarial_attack_RL/nthu_logo.png" height="100" style="margin-right:20px;">
+                <center>
+                    <span style="font-size:38px">No More Discrimination:</br>
+                        Cross City Adaptation of Road Scene Segmenters</span>
+                </center>
+                <img src="../adversarial_attack_RL/CITI_LOGO.jpg" height="100" style="margin-left:20px;">
+
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            <br>
+            <span style="font-size:130%">
+            <a class="author" target="_blank" href="https://yihsinchen.github.io/"> Yi-Hsin Chen </a> &nbsp; &nbsp;
+            <a class="author" target="_blank" href=""> Wei-Yu Chen </a> &nbsp; &nbsp;
+            <a class="author" target="_blank" href=""> Yu-Ting Chen </a> &nbsp; &nbsp;
+            <a class="author" target="_blank" href=""> Bo-Cheng Tsai </a> &nbsp; &nbsp;
+            <a class="author" target="_blank" href="https://www.citi.sinica.edu.tw/pages/ycwang/"> Yu-Chiang Frank Wang </a> &nbsp; &nbsp;
+            <a class="author" target="_blank" href="http://aliensunmin.github.io/"> Min Sun </a> &nbsp; &nbsp;
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h1 style="text-align: center;"><font size="5"><p>
+                [<a href="semantic_segmentation_adaptation.html#Dataset">Dataset</a>]&nbsp;
+                [<a href="semantic_segmentation_adaptation.html#Our-Method">Our Method</a>]
+            </p></font></h1>
+            <hr style="height:1px;border:none;background-color:#5B5B5B;">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br><br>
+            <center>
+                <table>
+                    <tbody id="video-table-body">
+                    <tr>
+                      <td colspan="2">
+                          <center>
+                            <a name="Typical-Examples">
+                            <img src="../adversarial_attack_RL/World_map.png" usemap="#world_map" style="wdith:432px;height:200px;">
+                            <map name="world_map">
+                              <area shape="rect" coords="207,24,232,60" alt="Rome" onclick="select_city(0)">
+                              <area shape="rect" coords="143,113,161,149" alt="Rio" onclick="select_city(1)">
+                              <area shape="rect" coords="356,32,375,68" alt="Tokyo" onclick="select_city(2)">
+                              <area shape="rect" coords="235,51,352,87" alt="Taipei" onclick="select_city(3)">
+                            </map>
+                          </center>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="font-size:120%">
+                          <center><i>Click the <b>makers</b> in the above map to see our adaptation results of each city.</i></center>
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <img src="../adversarial_attack_RL/Adaptation/colorbar.png" height="600" style="margin-right:10px;">
+                        </td>
+                        <td>
+                            <div class="w3-content w3-display-container">
+                                <img class="Taipei" src="../adversarial_attack_RL/Adaptation/Taipei_set_1.png" style="width:600px">
+                                <img class="Taipei" src="../adversarial_attack_RL/Adaptation/Taipei_set_2.png" style="width:600px">
+                                <img class="Taipei_HL" src="../adversarial_attack_RL/Adaptation/Taipei_set_1_HL.png" style="width:600px">
+                                <img class="Taipei_HL" src="../adversarial_attack_RL/Adaptation/Taipei_set_2_HL.png" style="width:600px">
+                                <img class="Rome" src="../adversarial_attack_RL/Adaptation/Rome_set_1.png" style="width:600px">
+                                <img class="Rome" src="../adversarial_attack_RL/Adaptation/Rome_set_2.png" style="width:600px">
+                                <img class="Rome_HL" src="../adversarial_attack_RL/Adaptation/Rome_set_1_HL.png" style="width:600px">
+                                <img class="Rome_HL" src="../adversarial_attack_RL/Adaptation/Rome_set_2_HL.png" style="width:600px">
+                                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                        </td>
+                        <td colspan="5" style="font-size:120%">
+                            <center><i>Click the left/right <b>arrows</b> to see more examples of the selected city.</i></center>
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </center>
+            <tr>
+                <td colspan="2">
+                  <center>
+                    <button class="button button5" onclick="set_hl(1)" style="font-size:20px;">See <b>Highlights</b> of Improved Regions</button>
+                    <button class="button button5" onclick="set_hl(0)" style="font-size:20px;">Hide <b>Highlights</b> of Improved Regions</button>
+
+                  </center>
+                </td>
+            </tr>
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            <br><br>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <div style="width:1000px; text-align:justify; text-justify: auto; vertical-align:top;font-size:120%">
+                            <a name="Dataset">
+                            <hr style="height:3px;border:none;background-color:#5B5B5B;">
+                            <h2><span style="font-family: Verdana"><strong><font color="#0066CC">Our Dataset</font></strong></span></h2>
+                            We introduce a whole new dataset for road scence semantic segmentation with
+                            two unique properties:
+                            <br><br>
+                            <b>Diverse Locations and Appearances</b>: Our dataset consists of high-quality
+                            road scence images of four cities across countries: <i>Rome</i>, <i>Rio</i>,
+                            <i>Tokyo</i> and <i>Taipei</i>. Due to their diverse locations, these cities
+                            are expected to possess significant appearnace difference. This property makes our
+                            dataset perfect for adaptation tasks.
+                            <br><br>
+                            <b>Temporal Information</b>: For each city, we collect 1600 unlabeled image pairs which
+                            are taken at the same location but different times. Valuable temporal information is embeded
+                            in these image pairs, which facilitates our <i><u></u>unsupervised</i> adaptation method.<br><br>
+
+                            Moreover, for evaluation purpose, we select 100 images for each city and annotate them
+                            with Cityscapes-compatible labeling.
+                            <br><br>
+                            <button class="button" style="font-size:18px;">See Examples of Our Dataset</button><br>
+                            <a name="Our-Method">
+                            <hr style="height:3px;border:none;background-color:#5B5B5B;">
+                            <h2><span style="font-family: Verdana"><strong><font color="#0066CC">Our Method</font></strong></span></h2>
+                            <center><img src="../adversarial_attack_RL/Teaser.png" style="width:600px"></center><br>
+
+                            To adapt a road scene segmenter trained on some cities (source domain) to other unseen cities
+                            (target domain), we propose a unified framework utilizing <b>domain adversarial learning</b>, which
+                            performs joint global and class-wise alignment by leveraging soft labels from source and
+                            target-domain data. In addition, by leveraging the temporal information of our dataset, we
+                            uniquely identifies and introduce static-object priors to our method, which are retrieved from
+                            images via natural synchronization of static objects over time. On average over four target cities
+                            (Rio, Rome, Tokyo, Taipei), our method could improve the mIOU of the segmenter by 4.1%. For more
+                            details, please refer to our paper.<br><br>
+                        </div>
+                    </td>
+
+                    <!-- <td> -->
+                    <!--   <table> -->
+                    <!--     <tr> -->
+                    <!--       <td> -->
+                    <!--         &nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <!--         <a href = "http://arxiv.org/pdf/1512.08512"> -->
+                    <!--                                <\!-- <img src = "pipeline.png" height = "250px"><br> -\-> -->
+                    <!--         </a> -->
+                    <!--       </td> -->
+                    <!--       <td> -->
+                    <!--         <table> -->
+                    <!--           <tr><td height = 30><a href = "http://arxiv.org/pdf/1512.08512v1">Paper</a></td></tr> -->
+                    <!--           <tr><td height = 30>Slides (coming soon!)</td></tr> -->
+                    <!--           <tr><td height = 30>Code (coming soon!)</td></tr> -->
+                    <!--           <tr><td height = 30>Data (coming soon!)</td></tr> -->
+                    <!--         </table> -->
+                    <!--       </td> -->
+                    <!--     </tr> -->
+                    <!--   </table> -->
+                    <!-- </td> -->
+                </tr>
+                </tbody>
+            </table>
+
+            <br><br>
+            <table align="left" width="1000px">
+                <tbody>
+                <tr>
+
+                    <table width="400px">
+                        <tbody>
+                        <tr>
+                            <td align="center">
+                                <a id="paper-link" href="https://arxiv.org/abs/1703.06748">
+                                    <img style="height:200px" src="../adversarial_attack_RL/paper_thumb.png">
+                                </a>
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td align="center" style="font-size: 16px">
+                                <br><b>&nbsp;<a id="download-paper" href="https://arxiv.org/abs/1703.06748">Download
+                                Paper</a></b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+<hr style="height:1px;border:none;background-color:#5B5B5B;">
+<center>
+    <h2><span style="font-family: Verdana; font-size: medium;"><b>Contact</b> :&nbsp;<a href="https://yihsinchen.github.io/"><b>Yi-Hsin Chen</b></a></span></h2>
+    <h2><span style="font-family: Verdana; font-size: medium;"><b>Last update</b> : <b>April 1, 2017</b></span></h2>
+</center>
+
+<script>
+    var p = {loop: true, margin: 10, nav: false};
+    $(document).ready(function () {
+        $('#cloth-carousel').owlCarousel(p);
+    });
+    $(document).ready(function () {
+        $('#grass-carousel').owlCarousel(p);
+    });
+    $(document).ready(function () {
+        $('#gravel-carousel').owlCarousel(p);
+    });
+    $(document).ready(function () {
+        $('#plastic_bag-carousel').owlCarousel(p);
+    });
+    $(document).ready(function () {
+        $('#water-carousel').owlCarousel(p);
+    });
+    $(document).ready(function () {
+        $('#wood-carousel').owlCarousel(p);
+    });
+</script>
+<!-- End sliders -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+     i['GoogleAnalyticsObject'] = r;
+     i[r] = i[r] || function () {
+     (i[r].q = i[r].q || []).push(arguments)
+     }, i[r].l = 1 * new Date();
+     a = s.createElement(o),
+     m = s.getElementsByTagName(o)[0];
+     a.async = 1;
+     a.src = g;
+     m.parentNode.insertBefore(a, m)
+     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+     ga('create', 'UA-92164863-1', 'auto');
+     ga('send', 'pageview');
+
+
+    </script>
+    <script>
+        var slideIndex = 1;
+        var cityIndex = 0;
+        var highlight = 0;
+        showDivs(slideIndex, cityIndex, highlight)
+        showButton(highlight)
+
+        function select_city(n){
+          showDivs(slideIndex, cityIndex = n, highlight);
+        }
+        function plusDivs(n){
+            showDivs(slideIndex += n, cityIndex, highlight);
+        }
+        function set_hl(n){
+            showDivs(slideIndex, cityIndex, highlight = n)
+            showButton(highlight = n)
+        }
+
+        function showButton(n){
+            var i;
+            var x = document.getElementsByClassName("button button5");
+            for (i = 0; i < x.length; i++){
+              x[i].style.display = "none";
+            }
+            x[n].style.display = "block";
+        }
+        function showDivs(a, b, c){
+            var i;
+            var x_taipei = document.getElementsByClassName("Taipei");
+            var y_taipei = document.getElementsByClassName("Taipei_HL");
+            var x_Rome = document.getElementsByClassName("Rome");
+            var y_Rome = document.getElementsByClassName("Rome_HL");
+            if (a > x_taipei.length) {slideIndex = 1}
+            if (a < 1) {slideIndex = x_taipei.length}
+            for (i = 0; i < x_taipei.length; i++) {
+                x_taipei[i].style.display = "none";
+            }
+            for (i = 0; i < y_taipei.length; i++) {
+                y_taipei[i].style.display = "none";
+            }
+            for (i = 0; i < x_Rome.length; i++) {
+                x_Rome[i].style.display = "none";
+            }
+            for (i = 0; i < y_Rome.length; i++) {
+                y_Rome[i].style.display = "none";
+            }
+            if (b==0){
+
+                if (c==1){
+                    y_Rome[slideIndex-1].style.display = "block";
+                }
+                else{
+                    x_Rome[slideIndex-1].style.display = "block";
+                }
+            }
+            if (b==3){
+
+                if (c==1){
+                    y_taipei[slideIndex-1].style.display = "block";
+                }
+                else{
+                    x_taipei[slideIndex-1].style.display = "block";
+                }
+            }
+        }
+      </script>
+<script>
+    //$(document).ready(function() {
+    //    $('#carpet-carousel').owlCarousel({
+    ////        items:3,
+    ////        lazyLoad:true,
+    //        loop:true,
+    //dots: true,
+    //margin:10,
+    //nav: 0,
+    //    });
+    //});
+
+
+    var Toggle = 0;
+    $('#video-toggle').click(
+            function () {
+                if (Toggle == 0) {
+                    openNormalVideo()
+                    $(this).html("Hide <b>hightlights</b> of improved regions")
+                }
+                else {
+                    // put original source
+                    $('#video-table-body > tr')[$('#video-table-body > tr').length-1].remove()
+                    $('#video-table-body > tr')[$('#video-table-body > tr').length-1].remove()
+                    $(this).html("See <b>hightlights</b> of improved regions")
+                }
+                Toggle = !Toggle
+            }
+    )
+
+    const normalVideoList = [
+        ['../adversarial_attack_RL/ChopperCommand_cover.png', '../adversarial_attack_RL/Normal/ChopperCommand.mp4'],
+        ['../adversarial_attack_RL/Pong_cover.png', '../adversarial_attack_RL/Normal/Pong.mp4'],
+        ['../adversarial_attack_RL/MsPacman_cover.png', '../adversarial_attack_RL/Normal/MsPacman.mp4'],
+        ['../adversarial_attack_RL/Qbert_cover.png', '../adversarial_attack_RL/Normal/Qbert.mp4'],
+        ['../adversarial_attack_RL/Seaquest_cover.png', '../adversarial_attack_RL/Normal/Seaquest.mp4']
+
+    ]
+
+    function openNormalVideo() {
+        // Create agent attacked source
+        const newTr = document.createElement('tr')
+
+        normalVideoList.forEach(
+                function (item, key) {
+                    const newTd = document.createElement('td')
+                    const newVideo = document.createElement('video')
+                    const newSource = document.createElement('source')
+                    newTd.setAttribute('style','padding-top: 16px')
+                    newSource.setAttribute('src', item[1])
+                    newVideo.setAttribute('id', 'header-vid' + (key + 6).toString())
+                    newVideo.setAttribute('class', 'header-vid lazy-hidden')
+                    newVideo.setAttribute('onclick', 'this.paused ? this.play() : this.pause();')
+                    newVideo.setAttribute('poster', item[0])
+                    newVideo.setAttribute('data-poster', item[0])
+                    newVideo.appendChild(newSource)
+                    newTd.appendChild(newVideo)
+                    newTr.append(newTd)
+                    newVideo.load()
+                }
+        )
+        const newDescriptionTr = document.createElement('tr')
+        const newDescriptionTd = document.createElement('td')
+        newDescriptionTd.setAttribute('colspan', '5')
+        newDescriptionTd.setAttribute('style', 'font-size: 120%')
+
+        const newDescriptionCenter = document.createElement('center')
+        const newDescriptionText = document.createElement('i')
+        const text1 = document.createTextNode('Click each image to see how ')
+        const btext = document.createElement('b')
+        btext.appendChild(document.createTextNode('normal '))
+        const text2 = document.createTextNode('deep reinforcement learning agents act in Atari 2600.')
+
+        newDescriptionText.appendChild(text1)
+        newDescriptionText.appendChild(btext)
+        newDescriptionText.appendChild(text2)
+
+
+        newDescriptionCenter.appendChild(newDescriptionText)
+        newDescriptionTd.appendChild(newDescriptionCenter)
+        newDescriptionTr.appendChild(newDescriptionTd)
+
+        document.getElementById('video-table-body').appendChild(newTr)
+        document.getElementById('video-table-body').appendChild(newDescriptionTr)
+        $('.header-vid').click(
+                function (e) {
+                    ga('send', 'event','click', 'video', e.target.id)
+                }
+        )
+    }
+
+    $('#video-toggle').click(
+            function () {
+                ga('send','event', 'click', 'open normal')
+            }
+    )
+
+    $('.example-vid').click(
+            function(e) {
+                ga('send','event', 'click', 'example-video', e.target.id)
+            }
+    )
+
+    $('#paper-link').click(
+            function () {
+                ga('send','event', 'click', 'open paper')
+            }
+    )
+    $('#download-paper').click(
+            function () {
+                ga('send', 'event','click', 'open paper')
+            }
+    )
+
+    $('.header-vid').click(
+            function (e) {
+                ga('send', 'event','click', 'video', e.target.id)
+            }
+    )
+
+    $('.author').click(
+            function(e) {
+                ga('send', 'event', 'click', 'author', e.target.href)
+            }
+    )
+
+
+    //Frank edition end.
+</script>
+
+
+<div id="point-jawn" style="z-index: 2147483647;"></div>
+</body>
+</html>
