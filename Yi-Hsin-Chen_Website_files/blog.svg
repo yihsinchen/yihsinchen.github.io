@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="150px" height="151px" viewBox="0 0 150 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(5.000000, 5.000000)">
+            <text id="Blog" font-family="Helvetica-Bold, Helvetica" font-size="50" font-weight="bold" fill="#FFFFFF">
+                <tspan x="14.4580078" y="84">Blog</tspan>
+            </text>
+            <ellipse id="Oval-1" stroke="#FFFFFF" stroke-width="10" cx="70" cy="70.5" rx="70" ry="70.5"></ellipse>
+        </g>
+    </g>
+</svg>
